@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 
 function TeamForm(props) {
+  const setMembers = props.setMembers;
   const [person, setPerson] = useState({ name: "", role: "", email: "" });
 
   // Handlers
@@ -18,9 +19,15 @@ function TeamForm(props) {
     console.log(person);
   };
 
+  const submitHandler = event => {
+    event.preventDefault();
+    setMembers(members => [...members, person]);
+    setPerson({ name: "", role: "", email: " " });
+  };
+
   return (
     <Container>
-      <Form>
+      <Form onSubmit={submitHandler}>
         <FormGroup row>
           <Label for="fullName" sm={2}>
             Full Name
@@ -31,6 +38,7 @@ function TeamForm(props) {
               type="text"
               name="name"
               id="fullName"
+              value={person.name}
               placeholder="Enter Full Name"
             />
           </Col>
@@ -40,7 +48,13 @@ function TeamForm(props) {
             Select
           </Label>
           <Col sm={10}>
-            <Input onChange={mainHandler} type="select" name="role" id="role">
+            <Input
+              value={person.role}
+              onChange={mainHandler}
+              type="select"
+              name="role"
+              id="role"
+            >
               <option>Student</option>
               <option>Tech Lead</option>
               <option>Section Lead</option>
@@ -53,6 +67,7 @@ function TeamForm(props) {
           </Label>
           <Col sm={10}>
             <Input
+              value={person.email}
               onChange={mainHandler}
               type="text"
               name="email"
