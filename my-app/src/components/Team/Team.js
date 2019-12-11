@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   Card,
-  CardImg,
   CardText,
   CardBody,
   CardTitle,
@@ -12,19 +11,16 @@ import {
 
 function Team(props) {
   const person = props.person;
+
   return (
-    <Container>
-      <div>
-        <Card className="card">
-          <CardBody>
-            <CardTitle>Name: {person.name}</CardTitle>
-            <CardSubtitle>Role: {person.role}</CardSubtitle>
-            <CardText>Email: {person.email}</CardText>
-            <Button>Delete Member</Button>
-          </CardBody>
-        </Card>
-      </div>
-    </Container>
+    <Card>
+      <CardBody>
+        <CardTitle>Name: {person.name}</CardTitle>
+        <CardSubtitle>Role: {person.role}</CardSubtitle>
+        <CardText>Email: {person.email}</CardText>
+        <Button>Remove Member</Button>
+      </CardBody>
+    </Card>
   );
 }
 

@@ -1,5 +1,11 @@
 .card {
-  margin: 5%;
-  max-width: 30%;
+  display: inline-block !important;
+  padding: 0;
+  margin: 2%;
   text-align: center;
+  max-width: 15%;
+}
+
+.form {
+  margin-top: 2%;
 }

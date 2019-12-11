@@ -16,7 +16,6 @@ function TeamForm(props) {
   // Handlers
   const mainHandler = event => {
     setPerson({ ...person, [event.target.name]: event.target.value });
-    console.log(person);
   };
 
   const submitHandler = event => {
@@ -26,7 +25,7 @@ function TeamForm(props) {
   };
 
   return (
-    <Container>
+    <Container className="form">
       <Form onSubmit={submitHandler}>
         <FormGroup row>
           <Label for="fullName" sm={2}>
