@@ -13,6 +13,10 @@ function TeamForm(props) {
   const [person, setPerson] = useState({ name: "", role: "", email: "" });
 
   // Handlers
+  const mainHandler = event => {
+    setPerson({ ...person, [event.target.name]: event.target.value });
+    console.log(person);
+  };
 
   return (
     <Container>
@@ -23,6 +27,7 @@ function TeamForm(props) {
           </Label>
           <Col sm={10}>
             <Input
+              onChange={mainHandler}
               type="text"
               name="name"
               id="fullName"
@@ -35,7 +40,7 @@ function TeamForm(props) {
             Select
           </Label>
           <Col sm={10}>
-            <Input type="select" name="role" id="role">
+            <Input onChange={mainHandler} type="select" name="role" id="role">
               <option>Student</option>
               <option>Tech Lead</option>
               <option>Section Lead</option>
@@ -48,6 +53,7 @@ function TeamForm(props) {
           </Label>
           <Col sm={10}>
             <Input
+              onChange={mainHandler}
               type="text"
               name="email"
               id="email"
