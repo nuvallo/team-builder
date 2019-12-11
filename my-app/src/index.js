@@ -1,8 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-
-function App() {
-  return null;
-}
+import App from "../src/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
