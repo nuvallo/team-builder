@@ -1,7 +1,8 @@
 import React from "react";
+import TeamForm from "../src/components/TeamForm";
 
 function App() {
-  return null;
+  return <TeamForm />;
 }
 
 export default App;
