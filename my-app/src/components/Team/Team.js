@@ -23,7 +23,8 @@ function Team(props) {
           {" "}
           <span className="em">Email:</span> {person.email}
         </CardText>
-        <Button>Remove Member</Button>
+        <Button className="remove-btn">Remove Member</Button>
+        <Button className="edit-btn">Edit Member</Button>
       </CardBody>
     </Card>
   );
