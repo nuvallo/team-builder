@@ -15,9 +15,14 @@ function Team(props) {
   return (
     <Card>
       <CardBody>
-        <CardTitle>Name: {person.name}</CardTitle>
-        <CardSubtitle>Role: {person.role}</CardSubtitle>
-        <CardText>Email: {person.email}</CardText>
+        <CardTitle className="card-title">{person.name}</CardTitle>
+        <CardSubtitle>
+          <span className="em">Role:</span> {person.role}
+        </CardSubtitle>
+        <CardText>
+          {" "}
+          <span className="em">Email:</span> {person.email}
+        </CardText>
         <Button>Remove Member</Button>
       </CardBody>
     </Card>
